@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="My Website">
+    <meta name="keywords" content="My Website">
+    <meta name="author" content="Sawachii">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="Home.css">
+    
+</head>
+<body>
+    <div class="loader">
+        <div class="ring"></div>
+        <span>Loading...</span>
+    </div>
+    
+    <audio autoplay loop id="mySong">
+        <source src="Sounds/Ambient.mp3" type="audio/mp3">
+    </audio>
+
+    <header>
+        <a href="#" class="logo">Home Website</a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="About.html">About Me</a></li>
+            <li><a href="Song.html">Song</a></li>
+            <li><a href="Works.html">Works</a></li>
+        </ul>
+    </header>
+
+    <section>
+        <img src="Image/img2/Sky2-1.png" id="Sky">
+        <img src="Image/img2/Sun2-2.png" id="Sun">
+        <img src="Image/img2/Clouds2-3.png" id="Clouds">
+        <h2 id="text">My Portfolio</h2>
+        <a href="#sec" id="btn" onclick="audio.play()">Click Me!</a>
+        <img src="Image/img2/Lands2-4.png" id="Lands">
+        <img src="Image/img2/Glow2-5.png" id="Glow">
+    </section>
+
+    <div class="sec" id="sec">
+        <h2>Hey, i'm Nicholas</h2>
+        <p><br>Nicholas John C. Abeleda<br>a 1st Year College Student passionate about creating<br>and learning new knowledge about programming<br><br></p>
+        <div class="secs">
+            <img src="Image/nics3.png" class="nics">
+            <a href="Works.html" class="clicksa">My Works</a>
+        </div>
+    </div>
+
+    <script>
+        const audio = new Audio();
+        audio.src = "Sounds/click.mp3"
+
+        let Sun = document.getElementById('Sun');
+        let Clouds = document.getElementById('Clouds');
+        let Text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let Lands = document.getElementById('Lands');
+        let header = document.querySelector('header')
+
+        window.addEventListener('scroll',function(){
+            let value = window.scrollY;
+         
+            Sun.style.top = value * 1.05 + 'px';
+            Clouds.style.left = value * 1.05 + 'px';
+            Lands.style.top = value * 0 + 'px';
+            text.style.marginTop = value * -1 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+    <script type="text/javascript">
+        window.addEventListener("load", function() {
+        const loader = document.querySelector(".loader")
+        console.log(loader);
+        loader.className += " hidden";//class "loader hidden"
+        })
+    
+    </script>
+    
+</body>
+</html>
